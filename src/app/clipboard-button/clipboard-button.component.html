@@ -1,0 +1,33 @@
+<button class="btn btn-default" 
+    type="button" 
+    ngxClipboard 
+    [cbContent]="poemText" 
+    (cbOnSuccess)="cbOnSuccess()" 
+    (cbOnError)="cbOnError()" 
+    (mousedown)="prepareText()" 
+    (keydown)="prepareText()">
+  <i class="fa fa-clone"></i>  Copy 
+</button>
+
+<!-- Copyright -->
+<footer class="page-footer font-small blue pt-4 mt-4">
+<div class="footer-copyright text-center py-3 mt-4">© 2018 Copyright:
+    <a href="#"> Turzo Ahsan Sami</a>
+  </div>  
+</footer>
+<!-- Copyright -->
+
+<!--Sweet alerts using ngsweetalert2 by toverux: https://github.com/toverux/ngsweetalert2 -->
+<swal #successAlert 
+    title="Paste Away!" 
+    text="copied" 
+    type="success">
+</swal>
+
+<swal #failureAlert 
+    title="No Can Do Mate!" 
+    text="You're using Internet Explorer, right?" 
+    type="error"
+    [options]="{ confirmButtonText: 'View As Text', showCancelButton: true, cancelButtonText: 'Forget It' }"
+    (confirm)="onShowText()">
+</swal>

@@ -1,0 +1,112 @@
+input {
+  border-radius: 5px;
+  background: #62b989;
+  list-style-type: none;
+  text-align: left;
+  font-size: 1em;
+  color: #eee;
+  border:none;
+  width:95%;
+  max-width:750px;
+  padding: 10px 0 10px 10px;
+  display:block;
+  margin-top:10px;
+  margin-bottom:10px;
+  margin-right:auto;
+  margin-left:auto;
+}
+
+input:focus {
+  outline: none !important;
+  background: #719ece;
+  color: #eee;
+}
+
+input::-webkit-input-placeholder /* WebKit, Blink, Edge */
+{ 
+  color:    #fff;
+  opacity:  0.5;
+}
+input:-moz-placeholder /* Mozilla Firefox 4 to 18 */
+{ 
+  color:    #fff;
+  opacity:  0.5;
+}
+input::-moz-placeholder /* Mozilla Firefox 19+ */
+{ 
+  color:    #fff;
+  opacity:  0.5;
+}
+input:-ms-input-placeholder /* Internet Explorer 10-11 */
+{ 
+  color:    #fff;
+  opacity:  0.5;
+}
+input:focus::-webkit-input-placeholder /* WebKit, Blink, Edge */
+{ 
+  color:    #fff;
+  opacity:  0.5;
+}
+input:focus:-moz-placeholder /* Mozilla Firefox 4 to 18 */
+{ 
+  color:    #fff;
+  opacity:  0.5;
+}
+input:focus::-moz-placeholder /* Mozilla Firefox 19+ */
+{ 
+  color:    #fff;
+  opacity:  0.5;
+}
+input:focus:-ms-input-placeholder /* Internet Explorer 10-11 */
+{ 
+  color:    #fff;
+  opacity:  0.5;
+}
+
+
+#printed-poem-container {
+  max-width:750px;
+  width:100%;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.printed {
+  font-size: 1em;
+  padding: 2px;
+  color: #434d55;
+  margin:0;
+}
+
+.couplet-stripe {
+  padding:5px 0 10px 0;
+}
+
+.active-couplet-stripe {
+  background-color: #434d55;
+}
+
+@media (max-width: 600px) {
+
+  .couplet-stripe {
+    padding:5px 0 5px 0;
+    border-radius:0;
+  }
+
+  .input {
+    display:block;
+    width:95%;
+    margin-left:auto;
+    margin-right:auto;
+    font-size: 1em;
+  }
+
+  .input:focus {
+    outline: none !important;
+    margin-left:auto;
+    margin-right:auto;
+    background: #719ECE;
+    color: #eee;
+  }
+
+}

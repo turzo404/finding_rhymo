@@ -1,0 +1,51 @@
+<div class="couplet-stripe" 
+    [ngClass]="{'active-couplet-stripe': isFocused && showText===false}">
+
+  <label class="screen-reader-only" for="coupletInput1">
+    Couplet {{coupletIndex+1}} Line 1 Text
+  </label>
+  <input #coupletInput1 
+      id="coupletInput1"
+      *ngIf="showText===false" 
+      type="text"
+      maxlength="120" 
+      class="form-control"
+      autofocus 
+      placeholder=""
+      [formControl]="line1Input"
+      (keyup.enter)="focusSecondInput()"
+      (focus)="onFocus()" >
+
+  <label class="screen-reader-only" for="coupletInput2">
+    Couplet {{coupletIndex+1}} Line 2 Text
+  </label>
+  <input #coupletInput2
+      id="coupletInput2"
+      *ngIf="showText===false"
+      type="text" 
+      maxlength="120" 
+      class="form-control"
+      placeholder=""
+      [(ngModel)]="coupletLines.line2" 
+      (focus)="onFocus()" 
+      (keyup.enter)="focusNextCouplet()" >
+
+  <rhyme-suggestion 
+      *ngIf="isFocused && searchText && showText===false" 
+      [searchText]="searchText" 
+      [isLoading]="isLoading" 
+      [searchError]="searchError"
+      [rhymeHints]="rhymeHints"
+      (onRhymeSelected)="onRhymeSelected($event)">
+  </rhyme-suggestion>
+
+  <div id="printed-poem-container">
+    <p class="printed" *ngIf="showText">
+      {{coupletLines.line1}}
+    </p>
+    <p class="printed" *ngIf="showText">
+      {{coupletLines.line2}}
+    </p>
+  </div>
+
+</div>

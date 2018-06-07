@@ -1,0 +1,34 @@
+<div id="logo-container">
+  <img id="logo" src="/assets/logo.svg" alt="Poetry Buddy Logo"/>
+</div>
+<h1 class="scribbled">Finding Rhyme-O</h1>
+<p  id="caption" class="scribbled">
+  <!-- Write a poem! Rhyme suggestions will appear as you type. -->
+</p>
+
+<section id="writing-space">
+
+  <poem-couplet *ngFor="let stanza of poem; let i = index" 
+      [coupletLines]="stanza" 
+      [showText]="showText" 
+      [coupletIndex]="i">
+  </poem-couplet>
+  
+</section>
+
+<section id="button-container">
+
+  <!-- <button *ngIf="!showText" (click)="addCouplet()">
+    <i class="fa fa-plus"></i> Add More Lines
+  </button> -->
+
+  <clipboard-button *ngIf="!showText" 
+      [poem]="poem" 
+      (showText)="onShowText()">
+  </clipboard-button>
+  
+  <button *ngIf="showText" (click)="toggleShowText()">
+    <i class="fa fa-edit"></i>  Back To Edit
+  </button>
+
+</section>
